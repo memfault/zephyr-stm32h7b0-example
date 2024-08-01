@@ -48,8 +48,6 @@ jobs:
           cd zephyr-workspace
           ccache -z
 
-          west build --sysbuild \
-            --pristine=always \
-            --board=stm32h7b0 zephyr-stm32h7b0-example
+          west build --sysbuild --board stm32h7b3i_dk --pristine=always zephyr-stm32h7b0-example
 
           ccache -sv

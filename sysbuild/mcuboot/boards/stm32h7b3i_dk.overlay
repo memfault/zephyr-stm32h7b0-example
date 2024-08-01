@@ -1,0 +1,7 @@
+#include "../../../boards/stm32h7b3i_dk.overlay"
+
+/ {
+	chosen {
+		zephyr,code-partition = &boot_partition;
+	};
+};

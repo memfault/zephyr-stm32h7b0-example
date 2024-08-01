@@ -8,7 +8,7 @@ manifest:
         name-allowlist:
           - cmsis
           - hal_stm32
-          # - mbedtls
+          - mbedtls
           - mcuboot
           - picolibc
 

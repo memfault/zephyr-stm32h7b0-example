@@ -46,7 +46,6 @@ int main(void) {
   printk("\n" MEMFAULT_BANNER_COLORIZED);
 
   memfault_device_info_dump();
-  memfault_zephyr_port_install_root_certs();
 
   return 0;
 }

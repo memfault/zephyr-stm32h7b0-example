@@ -17,14 +17,14 @@ To try out this example app:
    ```bash
    mkdir zephyr-workspace
    cd zephyr-workspace
-   west init -m https://github.com/memfault/stm32h7b3i_dk
+   west init -m https://github.com/memfault/zephyr-stm32h7b0-example
    west update
    ```
 
 3. Build the example app:
 
    ```bash
-   west build stm32h7b3i_dk --sysbuild
+   west build --sysbuild --board stm32h7b3i_dk --pristine=always zephyr-stm32h7b0-example
    ```
 
    `--sysbuild` will build the MCUboot image as well, which will also get
@@ -42,7 +42,7 @@ To try out this example app:
 
    ```bash
    # select the correct serial port for your system
-   pyserial-miniterm --raw /dev/serial/by-id/TODO 115200
+   pyserial-miniterm --raw /dev/serial/by-id/usb-STMicroelectronics_STLINK-V3_002000353331510933323639-if02 115200
 
    uart:~$ mflt get_device_info
    [00:09:21.911,000] <inf> mflt: S/N: DEMOSERIAL
