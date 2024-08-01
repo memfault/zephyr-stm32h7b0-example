@@ -1,0 +1,14 @@
+# Application Kconfig file
+#
+# This is loaded when building this directory with west.
+menu "Memfault Example Application Configuration"
+
+config MEMFAULT_EXAMPLE_SOFTWARE_VERSION
+    string "Software Version"
+    default "1.0.0"
+    help
+      The software version to report to Memfault.
+
+endmenu
+
+source "Kconfig.zephyr"

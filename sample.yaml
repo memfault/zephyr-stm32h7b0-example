@@ -1,0 +1,12 @@
+common:
+  tags: memfault
+  platform_allow: >
+    stm32h7b0
+sample:
+  description: Memfault Example
+  name: zephyr-stm32h7b0-example
+tests:
+  sample.build:
+    build_only: true
+    # extra_configs:
+    #   - CONFIG_MEMFAULT_PROJECT_KEY="dummy"
