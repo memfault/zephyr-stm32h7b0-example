@@ -45,8 +45,8 @@ To try out this example app:
    pyserial-miniterm --raw /dev/serial/by-id/usb-STMicroelectronics_STLINK-V3_002000353331510933323639-if02 115200
 
    uart:~$ mflt get_device_info
-   [00:09:21.911,000] <inf> mflt: S/N: DEMOSERIAL
-   [00:09:21.911,000] <inf> mflt: SW type: zephyr-app
-   [00:09:21.911,000] <inf> mflt: SW version: 0.0.1727a85c
-   [00:09:21.911,000] <inf> mflt: HW version: esp32c3_devkitm
+   [00:00:03.449,000] <inf> mflt: S/N: 373535343430510d00410045
+   [00:00:03.455,000] <inf> mflt: SW type: app
+   [00:00:03.460,000] <inf> mflt: SW version: 0.0.1+1e097ff
+   [00:00:03.465,000] <inf> mflt: HW version: stm32h7b3i_dk
    ```
