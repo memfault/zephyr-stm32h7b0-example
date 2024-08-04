@@ -11,6 +11,12 @@
 	status = "okay";
 };
 
+/* Enable backup SRAM to store reboot reason through OTA- the location of the
+reboot reason structure should be fixed from version to version */
+&backup_sram {
+	status = "okay";
+};
+
 &adc2 {
 	pinctrl-0 = <&adc2_inp0_pc2_c>;
 	pinctrl-names = "default";
