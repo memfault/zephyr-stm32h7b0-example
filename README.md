@@ -50,3 +50,35 @@ To try out this example app:
    [00:00:03.460,000] <inf> mflt: SW version: 0.0.1+1e097ff
    [00:00:03.465,000] <inf> mflt: HW version: stm32h7b3i_dk
    ```
+
+## Note about MCUboot + Sysbuild
+
+This example application uses [Zephyr's
+Sysbuild](https://docs.zephyrproject.org/latest/build/sysbuild/index.html)
+feature to build both the bootloader and application together.
+
+To enable MCUboot, this guide was followed:
+
+https://docs.mcuboot.com/readme-zephyr
+
+The following steps were taken:
+
+1. add a `sysbuild.conf` file with `SB_CONFIG_BOOTLOADER_MCUBOOT=y` to enable MCUboot
+2. a DT overlay file, `boards/stm32h7b3i_dk.overlay`, to specify a custom partition layout:
+
+   - boot_partition: MCUboot goes here
+   - storage_partition: unused, could be used for a filesystem or NVS
+   - slot0_partition: primary slot for the application
+   - slot1_partition: secondary slot for the application
+   - scratch_partition: used by MCUboot for swap operations
+
+3. add the `sysbuild/mcuboot` directory with the following files:
+
+   1. `prj.conf`: generic options for the MCUboot child image
+   2. `sysbuild/mcuboot/boards/stm32h7b3i_dk.overlay`: MCUboot-specific overlay,
+      used to select the correct partition for MCUboot. This overlay includes
+      the above overlay, so the partition layout is defined in one place.
+
+      ```devicetree
+      zephyr,code-partition = &boot_partition;
+      ```
