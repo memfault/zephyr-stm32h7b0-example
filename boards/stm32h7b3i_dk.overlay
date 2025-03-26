@@ -11,6 +11,11 @@
 	status = "okay";
 };
 
+/* Enable SRAM5 (SRD SRAM) */
+&sram5 {
+	status = "okay";
+};
+
 &adc2 {
 	pinctrl-0 = <&adc2_inp0_pc2_c>;
 	pinctrl-names = "default";
