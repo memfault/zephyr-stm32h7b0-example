@@ -4,6 +4,7 @@
 	};
 	aliases {
 		die-temp0 = &die_temp;
+		watchdog0 = &wwdg1;
 	};
 };
 
@@ -14,6 +15,10 @@
 /* Enable backup SRAM to store reboot reason through OTA- the location of the
 reboot reason structure should be fixed from version to version */
 &backup_sram {
+	status = "okay";
+};
+
+&wwdg1 {
 	status = "okay";
 };
 
