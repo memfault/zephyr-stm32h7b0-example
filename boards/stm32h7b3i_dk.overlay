@@ -25,6 +25,20 @@ reboot reason structure should be fixed from version to version */
 	status = "okay";
 };
 
+&timers2 {
+    status = "okay";
+    // pinctrl-0 = <&tim2_ch1_pb10>;
+    // pinctrl-names = "default";
+    // prescaler = <7999>;
+    // counter-mode = "up";
+    // enable-interrupt;
+	st,prescaler = <83>;
+
+	counter {
+		status = "okay";
+	};
+};
+
 &flash0 {
 	partitions {
 		compatible = "fixed-partitions";
